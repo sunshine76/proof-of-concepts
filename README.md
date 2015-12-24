@@ -1,4 +1,4 @@
-# proof-of-concepts
+# Proof of Concepts
 
 Repository for various proof of concepts.
 
@@ -20,6 +20,10 @@ How does one  inject different values for keys  defined in the properties file f
 ### Solution:
 Create maven profiles and define the values for keys for each environment. ( See pom.xml for more details)
 
+### Running the project
+1. Select the maven profile as test
+2. Run the test case PropertyFileTestCase.java
+
 
 ##Reference Application
 Build a reference application to experiment various concepts. 
@@ -28,6 +32,11 @@ Reference app uses
   2. Embedded h2 database.
   3. Spring MVC 
   4. Spring JPA
+
+### Running the project
+1. mvn spring-boot:run ( If you are running inside IntelliJ open Maven Projects Plugins->spring-boot->spring-boot:run)
+
+Note : for other ways to run spring boot refer to https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-running-your-application.html
 
 Goal (Work in Progress)
   1. Define and implement exception handling 
