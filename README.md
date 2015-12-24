@@ -12,8 +12,8 @@ Environment Set up:
 
 Pre-requisites:
 
-1. JAVA ( 1.7 or greater) 
+1. JAVA ( 1.6 or greater) 
 2. Maven 3
-3. Any IDE of your choice( Eclipse or IntelliJ)
+3. Any IDE of your choice( for example Eclipse or IntelliJ)
 
-Clone this project and import this project.
+Clone  and import this project.
