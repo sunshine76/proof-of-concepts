@@ -7,16 +7,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The Class PerformanceMetricAspect.
+ * CustomAnnotationHandlerAspect will have methods to handle custom annotations defined.
+ * 
+ * @author kirankandala
  */
 @Aspect
-public class PerformanceMetricAspect {
+public class CustomAnnotationHandlerAspect {
 
     /** The Constant LOG. */
-    private static final Logger LOG = LoggerFactory.getLogger(PerformanceMetricAspect.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomAnnotationHandlerAspect.class);
 
     /**
-     * Profile.
+     * Profile method will capture the execution times for the methods annotated with LogExecutionMetrics.
      * 
      * @param joinPoint the joinPoint
      * @return the object

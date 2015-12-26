@@ -1,5 +1,8 @@
 package org.referenceapp.config;
 
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
 import org.referenceapp.util.LogExecutionMetrics;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,9 +16,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
 
 /**
  * Created by schinta6 on 12/23/15.
