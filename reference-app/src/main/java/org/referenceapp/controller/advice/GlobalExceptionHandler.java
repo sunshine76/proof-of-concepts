@@ -27,11 +27,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpClientErrorException.class)
     public ResponseEntity<String> handleException(HttpClientErrorException e){
         logException(e);
-        if(e.getStatusCode().equals(HttpStatus.NOT_FOUND)){
-            return new ResponseEntity<String>("",HttpStatus.NOT_FOUND);
-        }
-        //TODO:need to review..
-        return new ResponseEntity<String>("",e.getStatusCode());
+        return new ResponseEntity<String>("Internal Server Error",e.getStatusCode());
     }
 
     private void logException(Exception e){
