@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 @Aspect
 public class CustomAnnotationHandlerAspect {
 
-    /** The Constant LOG. */
     private static final Logger LOG = LoggerFactory.getLogger(CustomAnnotationHandlerAspect.class);
 
     /**
