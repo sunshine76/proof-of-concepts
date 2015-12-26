@@ -1,5 +1,6 @@
 package org.referenceapp.config;
 
+import org.referenceapp.util.LogExecutionMetrics;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,7 @@ import javax.sql.DataSource;
 public class ApplicationConfiguration {
 
     @Bean
+    @LogExecutionMetrics
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder().addScript("classpath:h2/schema.sql")
                 .addScript("classpath:h2/data.sql")
@@ -35,6 +37,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    @LogExecutionMetrics
     public EntityManagerFactory entityManagerFactory() {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -50,6 +53,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    @LogExecutionMetrics
     public PlatformTransactionManager transactionManager() {
 
         JpaTransactionManager txManager = new JpaTransactionManager();
