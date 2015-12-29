@@ -1,4 +1,4 @@
-package org.referenceapp.util;
+package org.referenceapp.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

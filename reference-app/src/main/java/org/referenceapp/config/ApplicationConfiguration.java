@@ -1,12 +1,10 @@
 package org.referenceapp.config;
 
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
-import org.referenceapp.util.LogExecutionMetrics;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -17,6 +15,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
 /**
  * Created by schinta6 on 12/23/15.
  */
@@ -25,10 +26,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableJpaRepositories(basePackages = "org.referenceapp.repository")
 @EnableTransactionManagement
 @EnableWebMvc
+@EnableAspectJAutoProxy
+@EnableJpaAuditing
 public class ApplicationConfiguration {
 
     @Bean
-    @LogExecutionMetrics
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder().addScript("classpath:h2/schema.sql")
                 .addScript("classpath:h2/data.sql")
@@ -37,7 +39,6 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    @LogExecutionMetrics
     public EntityManagerFactory entityManagerFactory() {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -53,11 +54,11 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    @LogExecutionMetrics
     public PlatformTransactionManager transactionManager() {
+        JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
+        jpaTransactionManager.setEntityManagerFactory(entityManagerFactory());
 
-        JpaTransactionManager txManager = new JpaTransactionManager();
-        txManager.setEntityManagerFactory(entityManagerFactory());
-        return txManager;
+        return jpaTransactionManager;
     }
+
 }
