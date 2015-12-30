@@ -16,7 +16,7 @@ Repository for various proof of concepts.
 
 ##Environment Based properties
 ### Problem Description
-How does one  inject different values for keys  defined in the properties file for various evnvironments. ( Dev, QA, Test)
+How does one  inject different values for keys  defined in the properties file for various environments. ( Dev, QA, Test)
 ### Solution:
 Create maven profiles and define the values for keys for each environment. ( See pom.xml for more details)
 
