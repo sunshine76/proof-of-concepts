@@ -3,7 +3,7 @@ package org.referenceapp.controller;
 import org.referenceapp.entity.GroceryEntity;
 import org.referenceapp.io.JsonResponse;
 import org.referenceapp.repository.GroceryRepository;
-import org.referenceapp.util.LogExecutionMetrics;
+import org.referenceapp.annotation.LogExecutionMetrics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

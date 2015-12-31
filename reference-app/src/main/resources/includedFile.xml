@@ -1,0 +1,19 @@
+<included>
+    <appender name="includedConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>"%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"</pattern>
+        </encoder>
+    </appender>
+    <appender name="appLog" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_HOME}/reference-app.log</file>
+        <encoder>
+            <pattern>%d [%t] %-5p %c - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="perfLog" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_HOME}/perf.log</file>
+        <encoder>
+            <pattern>%d [%t] %-5p %c - %m%n</pattern>
+        </encoder>
+    </appender>
+</included>
