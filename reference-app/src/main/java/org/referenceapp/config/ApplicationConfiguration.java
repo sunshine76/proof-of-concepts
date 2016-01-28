@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 /*
-  * Created by surya chinta
+  * Created by surya
  */
 @Configuration
 @ComponentScan("org.referenceapp")
