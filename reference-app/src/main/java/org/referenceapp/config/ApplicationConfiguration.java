@@ -18,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-
 @Configuration
 @ComponentScan("org.referenceapp")
 @EnableJpaRepositories(basePackages = "org.referenceapp.repository")
